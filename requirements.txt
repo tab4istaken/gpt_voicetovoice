@@ -1,0 +1,6 @@
+edge_tts==6.1.10
+openai==1.23.6
+openai_whisper==20231117
+sounddevice==0.4.6
+soundfile==0.12.1
+SpeechRecognition==3.10.1
