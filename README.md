@@ -20,7 +20,7 @@ The script uses your system's default microphone for input. It can also detect t
 
 Locate the following lines of code inside the script (should be around **line 46**):
 
-```bash
+```python
 if language == "en":
     voice = "en-US-AriaNeural"
 elif language == "ja":
@@ -55,7 +55,7 @@ Let's pick the first one. Now, we need to pay attention to the **ShortName**, as
 
 Following the same pattern in the script, we'll update it to support the chosen voice. Here's what it should look like after the new changes:
 
-```bash
+```python
 if language == "en":
     voice = "en-US-AriaNeural"
 elif language == "ja":
@@ -78,19 +78,19 @@ First, download [VB-CABLE](https://vb-audio.com/Cable/). We'll be using this sof
 
 In the script, locate the following line (should be around **line 74**):
 
-```bash
+```python
 #sd.default.device = 12
 ```
 
 We'll need to identify the ID that belongs to the VB-CABLE Input. Run Python in a terminal and import the **sounddevice** library.
 
-```bash
+```python
 >> import sounddevice as sd
 ```
 
 Next, list the sound devices.
 
-```bash
+```python
 >> print(sd.query_devices())
 ```
 
@@ -102,7 +102,7 @@ You should get a list of sound devices. Locate the VB-CABLE Input. It should loo
 
 The number at the beginning represents the ID of the device (in my case, 14). In the script, uncomment the line mentioned earlier and change "12" to the ID you found. In my case, it'll look like this:
 
-```bash
+```python
 sd.default.device = 14
 ```
 
