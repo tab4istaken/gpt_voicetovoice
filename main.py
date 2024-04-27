@@ -5,7 +5,6 @@ import edge_tts
 import os
 import sounddevice as sd
 import soundfile as sf
-import re
 import openai
 import asyncio
 
@@ -18,15 +17,12 @@ microphone = sr.Microphone()
 #this uses your default microphone
 voice = ""
 openai.api_key = api_key
-headers = {"Content-Type": "application/json"}
 async def communicate(TEXT, VOICE, OUTPUT_FILE):
     communicate = edge_tts.Communicate(TEXT, VOICE, rate="+25%")
     await communicate.save(OUTPUT_FILE)
 output_file = "last_output.wav"
 print("Ready for input.")
-recording_counter = 1
-timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-file_name = f"recorded_audio_{timestamp}_{recording_counter}.wav"
+file_name = "recorded_audio.wav"
 
 def record_audio_continuously():
     recognizer = sr.Recognizer()
