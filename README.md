@@ -18,7 +18,7 @@ The script uses your system's default microphone for input. It can also detect t
 
 ## Add TTS support for other languages
 
-Locate the following lines of code inside the script (should be around **line 46**):
+Locate the following lines of code inside the script (should be around **line 42**):
 
 ```python
 if language == "en":
@@ -76,7 +76,7 @@ The fastest (and easiest) way to use RVC with this script is via a real-time RVC
 
 First, download [VB-CABLE](https://vb-audio.com/Cable/). We'll be using this software to create a virtual input source, which will help us redirect the TTS output of the script to the voice changer so that it can be changed into the RVC voice.
 
-In the script, locate the following line (should be around **line 74**):
+In the script, locate the following line (should be around **line 70**):
 
 ```python
 #sd.default.device = 12
