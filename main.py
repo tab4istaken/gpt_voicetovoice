@@ -70,6 +70,7 @@ def record_audio_continuously():
                 #sd.default.device = 12
                 data, fs = sf.read("last_output.wav", dtype = 'float32')
                 sd.play(data,fs)
+                print("Chatbot:", str(reply))
                 sd.wait()
                 os.remove("last_output.wav")
             except sr.WaitTimeoutError:
